@@ -15,7 +15,7 @@ from devices import Purifer
 
 class DeviceCategories(ABC):
     @property
-    def puriffer(self):
+    def purifer(self):
         return Purifer(self.api_instance)
 
     @property
