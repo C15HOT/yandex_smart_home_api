@@ -6,7 +6,7 @@ import typing
 import aiohttp
 import asyncio
 
-token = 'y0_AgAAAAAfll3JAAkELQAAAADaD3TazEaEAM3GSi61hOmlMrrA_VmQV2Y'
+
 
 if typing.TYPE_CHECKING:
     from devices import BaseDevice
@@ -37,7 +37,7 @@ class YandexApi(ABCAPI):
                  version='/v1.0'):
         self.client_token = client_token
         self.host = host
-        self.headers = {'Authorization': "Bearer {}".format(token)}
+        self.headers = {'Authorization': "Bearer {}".format(client_token)}
         self.version = version
 
     async def get_smart_home_info(self, resource='/user/info') -> Dict:
@@ -91,11 +91,3 @@ class YandexApi(ABCAPI):
             async with session.post(f'{self.host}{self.version}{resource}{scenario_id}/actions') as response:
                 result = await response.json()
                 return result
-
-#
-# q = YandexApi(client_token=token)
-
-# loop = asyncio.get_event_loop()
-# pprint(loop.run_until_complete(q.get_smart_home_info()))
-# print('\n')
-# pprint(loop.run_until_complete((q.delete_device(device_id='8481f9ef-cb6d-47d4-9ae9-e1f759000a3b'))))
