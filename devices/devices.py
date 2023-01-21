@@ -26,6 +26,7 @@ class BaseDevice:
 
 class Purifer(BaseDevice):
 
+
     async def on_off(self, device_id: str, value: bool):
         return (await self.api.devices_action(device_id=device_id, actions=[OnOff(type='on_off', value=value)()]))
 
