@@ -1,7 +1,7 @@
 # Yandex Smart Home API
 ### Что делает
 
-Библиотека для работы с Протоколом программного управления устройствами Яндекса.**
+Асинхронная библиотека для работы с Протоколом программного управления устройствами Яндекса.**
 
 ### Установка зависимостей
 ```
@@ -24,14 +24,19 @@ api.get_smart_home_info()
 api.get_device_info(device_id='')
 ```
 
-Для упращения работы реализован непосредственный доступ к устройствам, а также к доступным для устройств методам,
+Для упрjщения работы реализован непосредственный доступ к устройствам путем создания 
+экземпляра класса устройства, а также к доступным для устройств методам,
 получению свойств, способностей и информации об устройстве.
 
 #### Пример:
+(Необходимо учитывать, что все методы, за исключением set_id, являются асинхронными)
 ```python
-api.purifer.info(device_id='')
-api.purifer.on_off(device_id='', value=False)
-api.vacuum_cleaner.get_capabilities(device_id='')
-api.vacuum_cleaner.mode(device_id='', value='turbo')
+my_purifer = api.purifer.set_id(device_id='')
+my_purifer.info()
+my_purifer.on_off(value=True)
+
+my_vacuum_cleaner = api.purifer.set_id(device_id='')
+my_vacuum_cleaner.get_capabilities()
+my_vacuum_cleaner.mode(value='turbo')
 
 ```
