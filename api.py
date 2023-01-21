@@ -5,7 +5,7 @@ from typing import Dict, List
 
 import aiohttp
 
-from device_categories import DeviceCategories
+from devices.device_categories import DeviceCategories
 
 
 

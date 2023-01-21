@@ -1,6 +1,5 @@
 import typing
-
-from capabilities import OnOff, Mode, Toggle
+from capabilities import *
 
 if typing.TYPE_CHECKING:
     from api import YandexApi
