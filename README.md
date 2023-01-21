@@ -16,15 +16,18 @@ pip install -r requirements.txt
 api = YandexApi(client_token=token)
 ```
 
-Класс YandexApi позволяет напрямую обращаться к методам API, описанным в инструкции:
+Класс YandexApi позволяет напрямую обращаться к методам API, описанным в инструкции.
 
+#### Пример:
 ```python
+api.get_smart_home_info()
 api.get_device_info(device_id='')
 ```
 
 Для упращения работы реализован непосредственный доступ к устройствам, а также к доступным для устройств методам,
-получению свойств, способностей и информации об устройстве:
+получению свойств, способностей и информации об устройстве.
 
+#### Пример:
 ```python
 api.purifer.info(device_id='')
 api.purifer.on_off(device_id='', value=False)
