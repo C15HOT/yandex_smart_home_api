@@ -11,7 +11,7 @@ class BaseCapability:
         return f'devices.capabilities.{self.type}'
 
 @dataclass
-class OnOffCapability(BaseCapability):
+class OnOff(BaseCapability):
 
     value: bool
     instance: str = 'on'
@@ -31,7 +31,7 @@ class OnOffCapability(BaseCapability):
 class Mode(BaseCapability):
     "На данном этапе режимы задаются вручную"
     value: str
-    instance: str
+    instance: str = 'work_speed'
     @property
     def state(self):
         return {'instance': self.instance,
@@ -46,7 +46,7 @@ class Mode(BaseCapability):
 class Toggle(BaseCapability):
     "На данном этапе режимы задаются вручную"
     value: bool
-    instance: str
+    instance: str = 'pause'
     @property
     def state(self):
         return {'instance': self.instance,

@@ -1,27 +1,13 @@
 import json
-from abc import ABC, abstractmethod
-from pprint import pprint
+from abc import ABC
+
 from typing import Dict, List
-import typing
+
 import aiohttp
-import asyncio
+
+from device_categories import DeviceCategories
 
 
-
-if typing.TYPE_CHECKING:
-    from devices import BaseDevice
-
-from devices import Purifer
-
-class DeviceCategories(ABC):
-    @property
-    def purifer(self):
-        return Purifer(self.api_instance)
-
-    @property
-    @abstractmethod
-    def api_instance(self) -> "YandexApi":
-        pass
 
 
 class ABCAPI(DeviceCategories, ABC):
