@@ -125,3 +125,4 @@ class ColorSetting(BaseCapability):
     def __call__(self, *args, **kwargs):
         return {'type': self._type,
                 'state': self.state}
+

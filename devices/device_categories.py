@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING
 
-from .devices import Purifer, VacuumCleaner
+from .devices import Purifer, VacuumCleaner, Light
 
 if TYPE_CHECKING:
     from api import YandexApi
@@ -15,6 +15,10 @@ class DeviceCategories(ABC):
     @property
     def vacuum_cleaner(self):
         return VacuumCleaner(self.api_instance)
+
+    @property
+    def light(self):
+        return Light(self.api_instance)
 
     @property
     @abstractmethod
