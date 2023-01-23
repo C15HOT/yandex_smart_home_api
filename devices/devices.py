@@ -18,7 +18,7 @@ class BaseDevice:
         info = await self.api.get_device_info(device_id=self.device_id)
         return info
 
-    async def get_properties(self,):
+    async def get_properties(self, ):
         info = await self.api.get_device_info(device_id=self.device_id)
         properties = info.get('properties')
         return properties
@@ -31,6 +31,7 @@ class BaseDevice:
     def __call__(self, *args, **kwargs):
         return self
 
+
 class Purifer(BaseDevice):
 
     async def on_off(self, value: bool):
@@ -42,8 +43,10 @@ class VacuumCleaner(BaseDevice):
     async def on_off(self, value: bool):
         return (await self.api.devices_action(device_id=self.device_id, actions=[OnOff(type='on_off', value=value)()]))
 
-    async def mode(self,  value: str):
-        return (await self.api.devices_action(device_id=self.device_id, actions=[Mode(type='mode', value=value)()]))
+    async def mode(self, value: str):
+        return (await self.api.devices_action(device_id=self.device_id, actions=[
+            Mode(type='mode', instance=ModeFunctions.work_speed.value, value=value)()]))
 
-    async def toggle(self,  value: bool):
-        return (await self.api.devices_action(device_id=self.device_id, actions=[Toggle(type='toggle', value=value)()]))
+    async def toggle(self, value: bool):
+        return (await self.api.devices_action(device_id=self.device_id, actions=[
+            Toggle(type='toggle', instance=ToggleFunctions.pause.value, value=value)()]))
