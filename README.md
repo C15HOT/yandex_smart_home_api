@@ -1,7 +1,7 @@
 # Yandex Smart Home API
 ### Что делает
 
-Асинхронная библиотека для работы с Протоколом программного управления устройствами Яндекса.**
+Асинхронная библиотека для работы с Протоколом программного управления устройствами Яндекса.
 
 ### Установка зависимостей
 ```
@@ -13,6 +13,7 @@ pip install -r requirements.txt
 Необходимо создать экземпляр класса Yandex API, указав в атрибуте client_token токен, полученный по инструкции (https://yandex.ru/dev/dialogs/smart-home/doc/concepts/platform-protocol.html)
 
 ```python
+from api import YandexApi
 api = YandexApi(client_token=token)
 ```
 
