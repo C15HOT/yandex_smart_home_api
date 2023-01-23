@@ -50,3 +50,38 @@ class VacuumCleaner(BaseDevice):
     async def toggle(self, value: bool):
         return (await self.api.devices_action(device_id=self.device_id, actions=[
             Toggle(type='toggle', instance=ToggleFunctions.pause.value, value=value)()]))
+
+
+class Light(BaseDevice):
+
+    async def on_off(self, value: bool):
+        return (await self.api.devices_action(device_id=self.device_id, actions=[OnOff(type='on_off', value=value)()]))
+
+    async def mode(self, value: str):
+        return (await self.api.devices_action(device_id=self.device_id, actions=[
+            Mode(type='mode', instance=ModeFunctions.work_speed.value, value=value)()]))
+
+    async def toggle(self, value: bool):
+        return (await self.api.devices_action(device_id=self.device_id, actions=[
+            Toggle(type='toggle', instance=ToggleFunctions.backlight.value, value=value)()]))
+
+    async def range(self, value: float):
+        return (await self.api.devices_action(device_id=self.device_id, actions=[
+            Range(type='range', instance=RangeFunctions.brightness.value, value=value)()
+        ]))
+
+    async def color_setting_hsv(self, value: typing.Dict):
+        return (await self.api.devices_action(device_id=self.device_id, actions=
+        [ColorSetting(type='color_setting', instance=ColorFunctions.hsv.value, value=value)()]))
+
+    async def color_setting_rgb(self, value: int):
+        return (await self.api.devices_action(device_id=self.device_id, actions=
+        [ColorSetting(type='color_setting', instance=ColorFunctions.rgb.value, value=value)()]))
+
+    async def color_setting_temp(self, value: int):
+        return (await self.api.devices_action(device_id=self.device_id, actions=
+        [ColorSetting(type='color_setting', instance=ColorFunctions.temperature_k.value, value=value)()]))
+
+    async def color_setting_scene(self, value: str):
+        return (await self.api.devices_action(device_id=self.device_id, actions=
+        [ColorSetting(type='color_setting', instance=ColorFunctions.scene.value, value=value)()]))
