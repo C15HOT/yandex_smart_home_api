@@ -1,5 +1,7 @@
 import json
 from abc import ABC
+from asyncio import get_event_loop
+from pprint import pprint
 
 from typing import Dict, List
 
@@ -77,3 +79,9 @@ class YandexApi(ABCAPI):
             async with session.post(f'{self.host}{self.version}{resource}{scenario_id}/actions') as response:
                 result = await response.json()
                 return result
+
+
+
+
+
+

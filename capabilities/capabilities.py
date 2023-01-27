@@ -126,3 +126,16 @@ class ColorSetting(BaseCapability):
         return {'type': self._type,
                 'state': self.state}
 
+@dataclass
+class ServerAction(BaseCapability):
+    value: Any
+    istance: str = 'text_action'
+
+    @property
+    def state(self):
+        return {'instance': self.istance,
+                'value': self.value}
+
+    def __call__(self, *args, **kwargs):
+        return {'type': self._type,
+                'state': self.state}

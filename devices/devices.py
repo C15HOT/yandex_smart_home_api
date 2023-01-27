@@ -87,3 +87,4 @@ class Light(BaseDevice):
     async def color_setting_scene(self, value: str):
         return (await self.api.devices_action(device_id=self.device_id, actions=
         [ColorSetting(type='color_setting', instance=ColorFunctions.scene.value, value=value)()]))
+

@@ -20,6 +20,7 @@ class DeviceCategories(ABC):
     def light(self):
         return Light(self.api_instance)
 
+
     @property
     @abstractmethod
     def api_instance(self) -> "YandexApi":
