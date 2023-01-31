@@ -130,7 +130,20 @@ class YandexSessionAsync:
         self.headers = {'User-Agent': 'Chrome',
                         'Host': 'passport.yandex.ru'
                         }
-        self.session = aiohttp.ClientSession()
+
+
+        self.loop = asyncio.get_event_loop_policy().get_event_loop()
+        self.session = self.loop.run_until_complete(self.init_session())
+
+    async def init_session(self):
+        return aiohttp.ClientSession(loop=self.loop)
+
+    async def close_session(self):
+        await self.session.close()
+
+
+    def __del__(self):
+        self.loop.run_until_complete(self.close_session())
 
     async def authorize(self):
         response = await self.session.get(url="https://passport.yandex.ru/am?app_platform=android")
@@ -244,7 +257,6 @@ pprint(loop.run_until_complete(ys.add_scenario(scenario_name='голос',
                        instance='text_action',
                        value='выключи очиститель воздуха')))
 scenarios = loop.run_until_complete(ys.get_scenarios())
-pprint(scenarios)
 scenario_id = [scenario['id'] for scenario in scenarios if scenario['name'] == 'голос'][0]
 pprint(loop.run_until_complete(ys.exec_scenario(scenario_id=scenario_id)))
 pprint(loop.run_until_complete(ys.delete_scenario(scenario_id=scenario_id)))
