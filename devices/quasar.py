@@ -112,10 +112,12 @@ class YandexSession:
         }
 
 
+
+
 class YandexSessionAsync:
     quasar_url = "https://iot.quasar.yandex.ru/m/user"
     music_url = "https://api.music.yandex.net"
-    session = aiohttp.ClientSession()
+    session = aiohttp.ClientSession
     csrf_token = None
     music_uid = 0
     login = ""
@@ -128,6 +130,7 @@ class YandexSessionAsync:
         self.headers = {'User-Agent': 'Chrome',
                         'Host': 'passport.yandex.ru'
                         }
+        self.session = self.session()
 
     async def authorize(self):
         response = await self.session.get(url="https://passport.yandex.ru/am?app_platform=android")
@@ -231,3 +234,41 @@ class YandexSessionAsync:
             }]
         }
 
+#
+# ys = YandexSessionAsync(login='leto2017a', password='gibsoncsv16xp', station_id='3e49a1b4-0700-4e50-a82d-0adf422cb58d')
+#
+# loop = get_event_loop()
+# loop.run_until_complete(ys.authorize())
+# pprint(loop.run_until_complete(ys.add_scenario(scenario_name='голос',
+#                        activation_command='голос',
+#                        instance='text_action',
+#                        value='выключи очиститель воздуха')))
+# scenarios = loop.run_until_complete(ys.get_scenarios())
+# pprint(scenarios)
+# scenario_id = [scenario['id'] for scenario in scenarios if scenario['name'] == 'голос'][0]
+# pprint(loop.run_until_complete(ys.exec_scenario(scenario_id=scenario_id)))
+# pprint(loop.run_until_complete(ys.delete_scenario(scenario_id=scenario_id)))
+#
+# #
+# pprint(loop.run_until_complete(ys.update_scenario(scenario_id='11c5d1ff-1961-4530-9337-dbc74657d4c0', scenario_name='голос',
+#                        activation_command='голос',
+#                        instance='text_action',
+#                        value='включи очиститель воздуха')))
+# pprint(loop.run_until_complete(ys.exec_scenario(scenario_id='11c5d1ff-1961-4530-9337-dbc74657d4c0')))
+# pprint(loop.run_until_complete(ys.delete_scenario(scenario_id='11c5d1ff-1961-4530-9337-dbc74657d4c0')))
+
+# ys = YandexSession(login='leto2017a', password='gibsoncsv16xp', station_id='3e49a1b4-0700-4e50-a82d-0adf422cb58d')
+#
+# pprint(ys.add_scenario(scenario_name='голос',
+#                        activation_command='голос',
+#                        instance='text_action',
+#                        value='выключи очиститель воздуха'))
+# scenarios = ys.get_scenarios()
+#
+# scenario_id = [scenario['id'] for scenario in scenarios if scenario['name'] == 'голос'][0]
+# pprint(scenarios)
+#
+# pprint(ys.exec_scenario(scenario_id=scenario_id))
+#
+# pprint(ys.delete_scenario(scenario_id=scenario_id))
+#
