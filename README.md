@@ -1,3 +1,5 @@
+![img.png](img.png)
+
 # Yandex Smart Home API
 
 ### Что делает

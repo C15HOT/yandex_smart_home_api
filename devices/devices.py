@@ -57,11 +57,6 @@ class Light(BaseDevice):
     async def on_off(self, value: bool):
         return (await self.api.devices_action(device_id=self.device_id, actions=[OnOff(type='on_off', value=value)()]))
 
-    #TODO Все что ниже нужно тестировать
-
-    async def mode(self, value: str):
-        return (await self.api.devices_action(device_id=self.device_id, actions=[
-            Mode(type='mode', instance=ModeFunctions.work_speed.value, value=value)()]))
 
     async def toggle(self, value: bool):
         return (await self.api.devices_action(device_id=self.device_id, actions=[
@@ -88,3 +83,5 @@ class Light(BaseDevice):
         return (await self.api.devices_action(device_id=self.device_id, actions=
         [ColorSetting(type='color_setting', instance=ColorFunctions.scene.value, value=value)()]))
 
+class Tvoc(BaseDevice):
+    pass
