@@ -1,4 +1,4 @@
-![img.png](images/img.png)
+![img.png](docs/images/img.png)
 
 # Yandex Smart Home API
 
@@ -11,7 +11,7 @@ devices
 
 ## Built With
 
-[![img_1.png](images/img_1.png)](https://www.python.org)
+[![img_1.png](docs/images/img_1.png)](https://www.python.org)
 
 ## Getting started
 
