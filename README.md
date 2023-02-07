@@ -90,7 +90,7 @@ You must create an instance of the Yandex API class by specifying in the client_
 instructions
 
 ```python
-from api import YandexApi
+from yandex_smart_home_api.api import YandexApi
 
 api = YandexApi(client_token=client_token)
 ```
@@ -127,7 +127,7 @@ You must create an instance of the YandexSession or YandexSessionAsync class by 
 the above methods, as well as the login and password from the Yandex account.
 
 ```python
-from devices import YandexSession
+from yandex_smart_home_api.devices import YandexSession
 
 my_station = YandexSession(login='', password='', station_id='')
 

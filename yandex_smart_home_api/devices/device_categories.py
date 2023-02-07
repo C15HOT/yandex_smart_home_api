@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from .devices import Purifer, VacuumCleaner, Light, Tvoc
 
 if TYPE_CHECKING:
-    from api import YandexApi
+    from yandex_smart_home_api.api import YandexApi
 
 
 class DeviceCategories(ABC):

@@ -4,9 +4,9 @@ import unittest
 
 import dotenv
 
-from api import YandexApi
+from yandex_smart_home_api.api import YandexApi
 
-dotenv.load_dotenv('../.env')
+dotenv.load_dotenv('../../.env')
 token = os.getenv('client_token')
 
 

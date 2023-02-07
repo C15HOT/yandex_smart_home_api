@@ -1,8 +1,8 @@
 import typing
-from capabilities import *
+from yandex_smart_home_api.capabilities import *
 
 if typing.TYPE_CHECKING:
-    from api import YandexApi
+    from yandex_smart_home_api.api import YandexApi
 
 
 class BaseDevice:
