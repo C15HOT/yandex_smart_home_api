@@ -13,10 +13,11 @@
 </div>
 
 ## About
-[comment]: <> (Расширить этот раздел, просто воды долей)
-The library contains methods for obtaining information about the smart home, smart home devices and managing these
-devices
 
+The library contains methods for obtaining information about the smart home, smart home devices and managing these
+devices.
+Library methods allow you to separately manage smart home devices using the YandexApi class. The YandexSession/YandexSessionAsync class is used to control smart speakers.
+The library provides convenient direct access to device objects that allow you to access device-accessible methods
 ## Built With
 
 * [![Python][python-shield]][python-url]
@@ -24,7 +25,48 @@ devices
 ## Getting started
 
 ### Requirements
-[comment]: <> (Описать что надо для запуска, какое окружение, каких версий и прочее)
+<details><summary>Install requirements</summary>
+
+```sh
+pip install -r requirements.txt
+```
+```
+aiofiles==22.1.0
+aiohttp==3.8.3
+aiohttp-socks==0.7.1
+aiosignal==1.3.1
+anyio==3.6.2
+async-generator==1.10
+async-timeout==4.0.2
+attrs==22.2.0
+certifi==2022.12.7
+cffi==1.15.1
+charset-normalizer==2.1.1
+choicelib==0.1.5
+exceptiongroup==1.1.0
+frozenlist==1.3.3
+h11==0.14.0
+idna==3.4
+multidict==6.0.3
+outcome==1.2.0
+pycparser==2.21
+PySocks==1.7.1
+python-dotenv==0.21.0
+python-socks==2.1.1
+requests==2.28.2
+selenium==4.7.2
+sniffio==1.3.0
+sortedcontainers==2.4.0
+trio==0.22.0
+trio-websocket==0.9.2
+typing_extensions==4.4.0
+urllib3==1.26.13
+vbml==1.1.post1
+watchfiles==0.18.1
+wsproto==1.2.0
+yarl==1.8.2
+```
+</details>
 
 ### Prerequisites
 
