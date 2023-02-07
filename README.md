@@ -1,19 +1,30 @@
-![img.png](docs/images/img.png)
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/C15HOT/yandex_smart_home_api">
+    <img src="docs/images/img.png" alt="Logo" width="50%" height="50%">
+  </a>
 
-# Yandex Smart Home API
+<h3 align="center">Yandex Smart Home API</h3>
+
+  <p align="center">
+    Asynchronous library for working with the Yandex Device Control Protocol and yandex speakers with Alice.
+  </p>
+</div>
 
 ## About
-
-Asynchronous library for working with the Yandex Device Control Protocol and yandex speakers with Alice.
-
+[comment]: <> (Расширить этот раздел, просто воды долей)
 The library contains methods for obtaining information about the smart home, smart home devices and managing these
 devices
 
 ## Built With
 
-[![img_1.png](docs/images/img_1.png)](https://www.python.org)
+* [![Python][python-shield]][python-url]
 
 ## Getting started
+
+### Requirements
+[comment]: <> (Описать что надо для запуска, какое окружение, каких версий и прочее)
 
 ### Prerequisites
 
@@ -164,4 +175,9 @@ If you have any questions or comments on the project, email the developer - wvxp
 
 ## Acknowledgments
 
-[comment]: <> (The application was developed within the framework of the research project "Development of mechanisms for designing the processes of users' vital activity into the ecosystem of their digital assistants" No. 621308)
+The application was developed within the framework of the research project "Development of algorithms for integrating the external environment of users into the ecosystem of their digital assistants" No. 622265)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[python-shield]: https://img.shields.io/badge/Python-%203.9-blue?style=for-the-badge&logo=python
+[python-url]: https://www.python.org/downloads/release/python-390
