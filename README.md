@@ -163,7 +163,7 @@ value - action or phrase depending on the instance type
 To update the script, use the method:
 
 ```python
-my_station.update_scenatio(scenario_id='',
+my_station.update_scenario(scenario_id='',
                            scenario_name='',
                            activation_command='',
                            instance='',
