@@ -11,6 +11,7 @@ from .devices.device_categories import DeviceCategories
 
 
 
+
 class ABCAPI(DeviceCategories, ABC):
     @property
     def api_instance(self) -> "ABCAPI":
