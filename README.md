@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/C15HOT/yandex_smart_home_api">
-    <img src="docs/images/img.png" alt="Logo" width="50%" height="50%">
+
   </a>
 
 <h3 align="center">Yandex Smart Home API</h3>
